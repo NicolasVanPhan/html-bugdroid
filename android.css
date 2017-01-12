@@ -1,0 +1,141 @@
+
+h2, p {
+	text-align: 		center;
+	color: green;
+}
+
+/* --------------------- Bugdroid --------------------- */
+.android {
+	width:				400px;
+	height:				500px;
+	margin:				auto;
+}
+
+.android div {
+	/* to use left: right: top: and bottom: on ants, eyes, legs...
+	 the .head and .body containers must not be static */
+	position:			relative;
+	background-color:	#a4ca39;
+}
+
+/* --------------------- The head --------------------- */
+
+.android .head {
+	width:				220px;
+	height:				100px;
+	margin-left:		auto;
+	margin-right:		auto;
+	top:				30px;
+	border-radius:		110px 110px 0 0 / 95px 95px 0 0;
+}
+
+/* The eyes */
+
+.android .l_eye, .android .r_eye {
+	position: 			absolute;
+	top:				40px;
+	background-color:	white;
+	width:				20px;
+	height:				20px;
+	border-radius:		10px;
+}
+
+.android .l_eye {
+	left:				50px;
+}
+
+.android .r_eye {
+	right:				50px;
+}
+
+/* The ants */
+
+.android .l_ant, .android .r_ant {
+	position:			absolute;	
+	width:				6px;
+	height:				120px;
+	top:				-35px;
+	border-radius:		3px;
+}
+
+.android .l_ant {
+	left:				50%;
+	transform-origin:	bottom;
+	transform:			rotate(-30deg);
+}
+
+.android .r_ant {
+	right:				50%;
+	transform-origin:	bottom;
+	transform:			rotate(30deg);
+}
+
+/* --------------------- The body --------------------- */
+
+.android .body {
+	width:				220px;
+	height:				185px;
+	top:				38px;
+	margin-left:		auto;
+	margin-right:		auto;
+	border-radius:		0 0 30px 30px;
+}
+
+/* Arms */
+
+.android .body .l_arm, .android .body .r_arm {
+	position:			absolute;
+	width:				50px;
+	top:				-4px;
+	height:				150px;
+	border-radius:		25px / 22px;
+}
+
+.android .body .l_arm {
+	/* not using transform: translate(100%, 0)
+	 because it would conflict with rotation on hover*/
+	left:				-58px;
+}
+
+.android .body .r_arm {
+	right:				-58px;
+}
+
+/* Legs */
+
+.android .body .l_leg, .android .body .r_leg {
+	width:				50px;
+	height:				80px;
+	position:			absolute;
+	bottom:				0;
+	transform:			translate(0, 100%);
+	border-radius:		0 0 25px 25px;
+}
+
+.android .body .l_leg {
+	left:				45px;
+}
+
+.android .body .r_leg {
+	right:				45px;
+}
+
+/* --------------------- Motion --------------------- */
+
+.android .body .l_arm:hover {
+	transform-origin:	top;	/* for future rotation */
+	transform:			rotate(20deg);
+	transition:			transform 0.5s;
+}
+
+.android .body .r_arm:hover {
+	transform-origin:	top;
+	transform:	 		rotate(-30deg);
+	transition:			transform 0.5s;
+}
+
+.android .head:hover {
+	transform-origin:	bottom left;
+	transform:			rotate(-10deg);
+	transition:			transform 0.5s;
+}
